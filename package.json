@@ -1,0 +1,39 @@
+{
+  "name": "glad-idag-twitter",
+  "version": "1.0.0",
+  "description": "Österbottens Tidnings Glad idag på Twitter",
+  "main": "server.js",
+  "scripts": {
+    "start": "forever --minUptime=30000 server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bostrom/glad-idag-twitter.git"
+  },
+  "keywords": [
+    "twitter",
+    "bot",
+    "österbottens",
+    "tidning",
+    "glad",
+    "arg",
+    "idag"
+  ],
+  "author": "Fredrik Boström",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bostrom/glad-idag-twitter/issues"
+  },
+  "homepage": "https://github.com/bostrom/glad-idag-twitter#readme",
+  "dependencies": {
+    "canvas": "^1.4.0",
+    "debug": "^2.2.0",
+    "forever": "^0.15.2",
+    "goo.gl": "^0.1.4",
+    "jsdom": "^9.3.0",
+    "mongoose": "^4.5.2",
+    "mongoose-findorcreate": "^0.1.2",
+    "twitter": "^1.3.0"
+  }
+}
