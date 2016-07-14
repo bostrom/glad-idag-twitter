@@ -18,7 +18,8 @@ var config = {
     twitter_consumer_secret: process.env.TW_CONSUMER_SECRET || '',
     twitter_access_token_key: process.env.TW_ACCESS_TOKEN_KEY || '',
     twitter_access_token_secret: process.env.TW_ACCESS_TOKEN_SECRET || ''
-  }
+  },
+  pollIntervalSeconds: process.env.POLL_INTERVAL_SECONDS || 60
 };
 
 module.exports = config;

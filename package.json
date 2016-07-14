@@ -1,11 +1,11 @@
 {
   "name": "glad-idag-twitter",
-  "version": "1.0.0",
-  "description": "Österbottens Tidnings Glad idag på Twitter",
+  "version": "1.0.1",
+  "description": "Twitterbot för Österbottens Tidnings Glad idag och Arg idag.",
   "main": "server.js",
   "scripts": {
-    "start": "forever --minUptime=30000 server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "forever --minUptime=30000 --spinSleepTime 60000 app/server.js",
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -27,13 +27,26 @@
   },
   "homepage": "https://github.com/bostrom/glad-idag-twitter#readme",
   "dependencies": {
+    "bluebird": "^3.4.1",
     "canvas": "^1.4.0",
-    "debug": "^2.2.0",
+    "cheerio": "^0.20.0",
     "forever": "^0.15.2",
-    "goo.gl": "^0.1.4",
-    "jsdom": "^9.3.0",
+    "lodash": "^4.13.1",
     "mongoose": "^4.5.2",
-    "mongoose-findorcreate": "^0.1.2",
+    "request-promise": "^3.0.0",
     "twitter": "^1.3.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "chai-things": "^0.2.0",
+    "gulp": "^3.9.1",
+    "gulp-spawn-mocha": "^2.2.2",
+    "gulp-util": "^3.0.7",
+    "mocha": "^2.5.3",
+    "mockery": "^1.7.0",
+    "nock": "^8.0.0",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0"
   }
 }
