@@ -46,7 +46,7 @@ describe("otTwitter", function () {
     });
 
     imageGeneratorStub = sinon.stub();
-    imageGeneratorStub.returns('my-data-url');
+    imageGeneratorStub.returns(Promise.resolve('my-data-url'));
     mockery.registerMock('./imageGenerator', {
       generate: imageGeneratorStub
     });
@@ -152,12 +152,12 @@ describe("otTwitter", function () {
       });
 
       it("should not call the twitter client with long messages", function () {
-       return otTwitter.tweet(longContent).then(function () {
+        return otTwitter.tweet(longContent).then(function () {
           expect(postAsyncStub).not.to.have.been.called;
         });
       });
 
-            it("should return a debug response with long messages", function () {
+      it("should return a debug response with long messages", function () {
         otTwitter.tweet(longContent).should.eventually.become({
           id_str: 'debug'
         });
