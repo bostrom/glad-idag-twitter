@@ -12,7 +12,8 @@ var config = require('../config/config'),
 mongoose.Promise = require('bluebird');
 
 // start working
-process.stdout.write('Starting processing...');
+console.log('Starting processing...');
+console.log('Debug is ' + !!process.env.DEBUG);
 processGladIdag();
 
 function processGladIdag() {

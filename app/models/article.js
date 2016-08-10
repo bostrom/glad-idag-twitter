@@ -1,8 +1,7 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
-  findOrCreate = require('mongoose-findorcreate');
+  Schema = mongoose.Schema;
 
 var ArticleSchema = new Schema({
   articleId: {
@@ -14,7 +13,5 @@ var ArticleSchema = new Schema({
     type: String
   }
 });
-
-ArticleSchema.plugin(findOrCreate);
 
 module.exports = mongoose.model('Article', ArticleSchema);

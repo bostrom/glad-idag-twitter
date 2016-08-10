@@ -11,7 +11,6 @@ var dbPort = process.env.DB_PORT_27017_TCP_PORT || process.env.DB_PORT || 27017;
 // you don't want to use the environment variables
 
 var config = {
-  debug: process.env.DEBUG === '1',
   creds: {
     mongoose_auth_local: 'mongodb://' + dbHost + ':' + dbPort + '/gladidag',
     twitter_consumer_key: process.env.TW_CONSUMER_KEY || '',
