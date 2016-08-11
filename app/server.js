@@ -102,10 +102,10 @@ function tweetArticle(article) {
 
   .then(function (articleObject) {
     if (articleObject.type === 'glad') {
-      console.log('Found glad idag.');
+      console.log('Found glad idag (articleId: ' + article.articleId +').');
       return otTwitterGlad.tweet(articleObject.content);
     } else {
-      console.log('Found arg idag.');
+      console.log('Found arg idag (articleId: ' + article.articleId +').');
       return otTwitterArg.tweet(articleObject.content);
     }
   })
