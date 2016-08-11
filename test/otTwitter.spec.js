@@ -36,15 +36,6 @@ describe("otTwitter", function () {
     TwitterSpy = sinon.spy(exports, 'Twitter');
     mockery.registerMock('twitter', TwitterSpy);
 
-    mockery.registerMock('../config/config', {
-      creds: {
-        twitter_consumer_key: 'my_consumer_key',
-        twitter_consumer_secret: 'my_consumer_secret',
-        twitter_access_token_key: 'my_access_token_key',
-        twitter_access_token_secret: 'my_access_token_secret'
-      }
-    });
-
     imageGeneratorStub = sinon.stub();
     imageGeneratorStub.returns(Promise.resolve('my-data-url'));
     mockery.registerMock('./imageGenerator', {
@@ -52,7 +43,13 @@ describe("otTwitter", function () {
     });
 
     // load the twitter client, which requires the (now mocked) Twitter lib
-    otTwitter = require('../lib/otTwitter');
+    var OtTwitter = require('../lib/otTwitter');
+    otTwitter = new OtTwitter({
+      twitter_consumer_key: 'my_consumer_key',
+      twitter_consumer_secret: 'my_consumer_secret',
+      twitter_access_token_key: 'my_access_token_key',
+      twitter_access_token_secret: 'my_access_token_secret'
+    });
 
     shortContent = 'Hello world';
     longContent = 'Arg i dag är en boende på Vestersundsgatan över den usla skötseln av ekopunkten. Tydligen har den nya tömningsansvariga firman inte kapacitet att sköta tömningen på ett korrekt sätt. I torsdags svämmade kartongreturen över bredden, men observerade att sent på kvällen tömdes det. På plats fanns en vanlig sopbil utan kran. Nu måndag är kärlet fullt igen. Skärpning!';
@@ -136,7 +133,14 @@ describe("otTwitter", function () {
       beforeEach(function () {
         mockery.resetCache();
         process.env.DEBUG = true;
-        otTwitter = require('../lib/otTwitter');
+
+        var OtTwitter = require('../lib/otTwitter');
+        otTwitter = new OtTwitter({
+          twitter_consumer_key: 'my_consumer_key',
+          twitter_consumer_secret: 'my_consumer_secret',
+          twitter_access_token_key: 'my_access_token_key',
+          twitter_access_token_secret: 'my_access_token_secret'
+        });
       });
 
       it("should not call the twitter client with short messages", function () {

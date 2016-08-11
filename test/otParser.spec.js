@@ -18,8 +18,13 @@ describe("the OT parser", function () {
       .reply(200, require('./fixtures/ot-list-page.html'));
 
     nock('http://online.osterbottenstidning.fi')
-      .get(/Artikel\/Visa\/\d+/)
-      .reply(200, require('./fixtures/ot-article-page.html'));
+      .get(/Artikel\/Visa\/12345/)
+      .reply(200, require('./fixtures/ot-article-page-glad.html'));
+
+    nock('http://online.osterbottenstidning.fi')
+      .get(/Artikel\/Visa\/67890/)
+      .reply(200, require('./fixtures/ot-article-page-arg.html'));
+
   });
 
   afterEach(function () {
@@ -72,15 +77,43 @@ describe("the OT parser", function () {
 
   describe("the getArticle function", function () {
 
-    it("should return a string", function (done) {
-      otParser.getArticle(12345).then(function (article) {
-        expect(typeof article).to.equal('string');
+    it("should return a object", function (done) {
+      otParser.getArticle(67890).then(function (article) {
+        expect(typeof article).to.equal('object');
         done();
       });
     });
 
-    it("should return the article content", function () {
-      return otParser.getArticle(12345).should.eventually.equal('arg i dag är mamman till personen som var inblandad i singelolyckan i Esse på midsommardagen över den grova kommentaren som en cyklande förbipasserande fällde. ');
+    describe("for arg idag articles", function () {
+      it("should return the article content as property 'content'", function (done) {
+        otParser.getArticle(67890).then(function (article) {
+          expect(article.content).to.equal('arg i dag är mamman till personen som var inblandad i singelolyckan i Esse på midsommardagen över den grova kommentaren som en cyklande förbipasserande fällde. ');
+          done();
+        });
+      });
+
+      it("should return the article type as property 'type'", function (done) {
+        otParser.getArticle(67890).then(function (article) {
+          expect(article.type).to.equal('arg');
+          done();
+        });
+      });
+    });
+
+    describe("for glad idag articles", function () {
+      it("should return the article content as property 'content'", function (done) {
+        otParser.getArticle(12345).then(function (article) {
+          expect(article.content).to.equal('Glad i dag är en larsmo bo över den fina skötsel jag fick på jouren i dag och vilken nogrann undersökning dom gjorde , det är roligt att se att någon bryr sig för en så liten sak som lite feber och hosta i 5 dagar ett stort fång med rosor till hela jouren på malmska');
+          done();
+        });
+      });
+
+      it("should return the article type as property 'type'", function (done) {
+        otParser.getArticle(12345).then(function (article) {
+          expect(article.type).to.equal('glad');
+          done();
+        });
+      });
     });
 
     it("should reject if the page request return a non 200 response", function () {
@@ -89,7 +122,7 @@ describe("the OT parser", function () {
         .get(/Artikel\/Visa\/\d+/)
         .reply(404);
 
-      return otParser.getArticle(12345).should.be.rejectedWith(Error, 'NO_ARTICLE_FOUND');
+      return otParser.getArticle(67890).should.be.rejectedWith(Error, 'NO_ARTICLE_FOUND');
     });
 
     it("should reject if no articleId was given", function () {
@@ -102,7 +135,7 @@ describe("the OT parser", function () {
         .get(/Artikel\/Visa\/\d+/)
         .reply(200, require('./fixtures/ot-plus-article-page.html'));
 
-      return otParser.getArticle(12345).should.be.rejectedWith(Error, 'NO_ARTICLE_CONTENT');
+      return otParser.getArticle(34567).should.be.rejectedWith(Error, 'NO_ARTICLE_CONTENT');
     });
 
   });

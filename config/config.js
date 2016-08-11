@@ -13,10 +13,18 @@ var dbPort = process.env.DB_PORT_27017_TCP_PORT || process.env.DB_PORT || 27017;
 var config = {
   creds: {
     mongoose_auth_local: 'mongodb://' + dbHost + ':' + dbPort + '/gladidag',
-    twitter_consumer_key: process.env.TW_CONSUMER_KEY || '',
-    twitter_consumer_secret: process.env.TW_CONSUMER_SECRET || '',
-    twitter_access_token_key: process.env.TW_ACCESS_TOKEN_KEY || '',
-    twitter_access_token_secret: process.env.TW_ACCESS_TOKEN_SECRET || ''
+    twitterGlad: {
+      twitter_consumer_key: process.env.TW_GLAD_CONSUMER_KEY || '',
+      twitter_consumer_secret: process.env.TW_GLAD_CONSUMER_SECRET || '',
+      twitter_access_token_key: process.env.TW_GLAD_ACCESS_TOKEN_KEY || '',
+      twitter_access_token_secret: process.env.TW_GLAD_ACCESS_TOKEN_SECRET || '',
+    },
+    twitterArg: {
+      twitter_consumer_key: process.env.TW_ARG_CONSUMER_KEY || '',
+      twitter_consumer_secret: process.env.TW_ARG_CONSUMER_SECRET || '',
+      twitter_access_token_key: process.env.TW_ARG_ACCESS_TOKEN_KEY || '',
+      twitter_access_token_secret: process.env.TW_ARG_ACCESS_TOKEN_SECRET || ''
+    }
   },
   pollIntervalSeconds: process.env.POLL_INTERVAL_SECONDS || 60
 };

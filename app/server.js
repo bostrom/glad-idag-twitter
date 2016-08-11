@@ -2,7 +2,9 @@
 
 var config = require('../config/config'),
   Promise = require('bluebird'),
-  otTwitter = require('../lib/otTwitter'),
+  OtTwitter = require('../lib/otTwitter'),
+  otTwitterGlad = new OtTwitter(config.creds.twitterGlad),
+  otTwitterArg = new OtTwitter(config.creds.twitterArg),
   otParser = require('../lib/otParser'),
   _ = require('lodash'),
   mongoose = require('mongoose'),
@@ -98,8 +100,14 @@ function tweetArticle(article) {
   // get the article content from the web
   return otParser.getArticle(article.articleId)
 
-  .then(function (articleBody) {
-    return otTwitter.tweet(articleBody);
+  .then(function (articleObject) {
+    if (articleObject.type === 'glad') {
+      console.log('Found glad idag.');
+      return otTwitterGlad.tweet(articleObject.content);
+    } else {
+      console.log('Found arg idag.');
+      return otTwitterArg.tweet(articleObject.content);
+    }
   })
 
   .then(function (tweet) {
