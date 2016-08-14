@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "forever --minUptime=30000 --spinSleepTime 60000 app/server.js",
-    "test": "gulp"
+    "test": "gulp",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^5.3.0",
     "chai-things": "^0.2.0",
+    "coveralls": "^2.11.12",
     "gulp": "^3.9.1",
     "gulp-spawn-mocha": "^2.2.2",
     "gulp-util": "^3.0.7",
