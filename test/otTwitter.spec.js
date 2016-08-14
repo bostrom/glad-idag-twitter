@@ -38,7 +38,7 @@ describe("otTwitter", function () {
 
     imageGeneratorStub = sinon.stub();
     imageGeneratorStub.returns(Promise.resolve('my-data-url'));
-    mockery.registerMock('./imageGenerator', {
+    mockery.registerMock('text-to-image', {
       generate: imageGeneratorStub
     });
 
