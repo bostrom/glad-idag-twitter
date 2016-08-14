@@ -1,5 +1,11 @@
 # Glad idag / arg idag Twitter bot
 
+[![Dependency Status](https://img.shields.io/david/bostrom/glad-idag-twitter.svg)](https://david-dm.org/bostrom/glad-idag-twitter)
+[![devDependency Status](https://img.shields.io/david/dev/bostrom/glad-idag-twitter.svg)](https://david-dm.org/bostrom/glad-idag-twitter#info=devDependencies)
+[![Build Status](https://img.shields.io/travis/bostrom/glad-idag-twitter.svg)](https://travis-ci.org/bostrom/glad-idag-twitter)
+[![Code Coverage](https://img.shields.io/coveralls/bostrom/glad-idag-twitter.svg)](https://coveralls.io/github/bostrom/glad-idag-twitter)
+[![License](https://img.shields.io/badge/license-ISC-blue.svg)](https://opensource.org/licenses/ICS)
+
 A Twitter bot for publishing the reader's comments a.k.a. "Glad idag / Arg idag" from the Österbottens Tidning newspaper to Twitter. The articles express the reader's satisfaction or dissatisfaction regarding anything and are not related to the newspaper in any way.
 
 ## How it works
@@ -13,6 +19,8 @@ Since the maximum length of Twitter posts is 140 characters and the articles are
     git clone git@github.com:bostrom/glad-idag-twitter.git
     cd glad-idag-twitter
     npm install --production
+
+Note that glad-idag-twitter uses [node-canvas](https://github.com/Automattic/node-canvas) under the hood. For glad-idag-twitter's dependencies to install, you might have to fulfill the [installation requirements for node-canvas](https://github.com/Automattic/node-canvas#installation). Please refer to their documentation for instructions.
 
 ## Configuring it
 
@@ -37,12 +45,6 @@ The bot needs to be configured with keys for the Twitter accounts and host/port 
 
 The bot is able to run either locally or in a [Docker](https://www.docker.com/) container.
 
-### Locally
-
-Make sure you have a MongoDB database instance running on your host. Set the needed configuration environemnt variables and run ```npm start```. Example:
-
-    DEBUG=1 DB_HOST=localhost npm start
-
 ### In a Docker container
 
 The supplied ```Dockerfile``` and ```docker-compose.yml``` provides means for the bot to run in a Docker container (actually two containers, one for the server and one for the database instance).
@@ -54,6 +56,18 @@ Make a copy of the environment variable configuration file ```config/web-variabl
     cp config/web-variables{-example,}.env
     vi config/web-variables.env
     docker-compose up                        # ctrl-C exits
+
+### Locally
+
+Make sure you have a MongoDB database instance running on your host. Set the needed configuration environemnt variables and run ```npm start```. Example:
+
+    DEBUG=1 DB_HOST=localhost npm start
+
+If you don't want to install MongoDB on your host, you can run it in a Docker container and have your local glad-idag-twitter process connect to the container.
+
+    docker run -d -p 27017:27017 --name gladidagmongo mongo:latest    # start a mongo container
+    docker-machine ip default                                         # check the ip of your docker machine
+    DEBUG=1 DB_HOST=192.168.99.100 npm start                          # make the bot connect to the mongo container
 
 ### In debug mode
 
