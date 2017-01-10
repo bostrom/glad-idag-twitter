@@ -1,6 +1,6 @@
 {
   "name": "glad-idag-twitter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Twitterbot för Österbottens Tidnings Glad idag och Arg idag.",
   "main": "server.js",
   "scripts": {
