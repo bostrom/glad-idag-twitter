@@ -26,20 +26,20 @@ Note that glad-idag-twitter uses [node-canvas](https://github.com/Automattic/nod
 
 The bot needs to be configured with keys for the Twitter accounts and host/port to a MongoDB database for bookkeeping. The values are read from the following environment variables:
 
-|            Environment variable(s)            | Required | Default value |              Description               |
-| --------------------------------------------- | -------- | ------------- | -------------------------------------- |
-| ```TW_GLAD_CONSUMER_KEY```                    | Yes      | ""            | Twitter account #1 consumer key        |
-| ```TW_GLAD_CONSUMER_SECRET```                 | Yes      | ""            | Twitter account #1 consumer secret     |
-| ```TW_GLAD_ACCESS_TOKEN_KEY```                | Yes      | ""            | Twitter account #1 access token key    |
-| ```TW_GLAD_ACCESS_TOKEN_SECRET```             | Yes      | ""            | Twitter account #1 access token secret |
-| ```TW_ARG_CONSUMER_KEY```                     | Yes      | ""            | Twitter account #2 consumer key        |
-| ```TW_ARG_CONSUMER_SECRET```                  | Yes      | ""            | Twitter account #2 consumer secret     |
-| ```TW_ARG_ACCESS_TOKEN_KEY```                 | Yes      | ""            | Twitter account #2 access token key    |
-| ```TW_ARG_ACCESS_TOKEN_SECRET ```             | Yes      | ""            | Twitter account #2 access token secret |
-| ```DB_PORT_27017_TCP_ADDR``` or ```DB_HOST``` | No       | "db"          | Database hostname                      |
-| ```DB_PORT_27017_TCP_PORT``` or ```DB_PORT``` | No       | 27017         | Database port                          |
-| ```POLL_INTERVAL_SECONDS```                   | No       | 60            | New article poll interval (seconds)    |
-| ```DEBUG```                                   | No       | false         | Turns on debug mode                    |
+|        Environment variable(s)        | Required | Default value |              Description               |
+| ------------------------------------- | -------- | ------------- | -------------------------------------- |
+| `TW_GLAD_CONSUMER_KEY`                | Yes      | ""            | Twitter account #1 consumer key        |
+| `TW_GLAD_CONSUMER_SECRET`             | Yes      | ""            | Twitter account #1 consumer secret     |
+| `TW_GLAD_ACCESS_TOKEN_KEY`            | Yes      | ""            | Twitter account #1 access token key    |
+| `TW_GLAD_ACCESS_TOKEN_SECRET`         | Yes      | ""            | Twitter account #1 access token secret |
+| `TW_ARG_CONSUMER_KEY`                 | Yes      | ""            | Twitter account #2 consumer key        |
+| `TW_ARG_CONSUMER_SECRET`              | Yes      | ""            | Twitter account #2 consumer secret     |
+| `TW_ARG_ACCESS_TOKEN_KEY`             | Yes      | ""            | Twitter account #2 access token key    |
+| `TW_ARG_ACCESS_TOKEN_SECRET `         | Yes      | ""            | Twitter account #2 access token secret |
+| `DB_PORT_27017_TCP_ADDR` or `DB_HOST` | No       | "db"          | Database hostname                      |
+| `DB_PORT_27017_TCP_PORT` or `DB_PORT` | No       | 27017         | Database port                          |
+| `POLL_INTERVAL_SECONDS`               | No       | 60            | New article poll interval (seconds)    |
+| `DEBUG`                               | No       | false         | Turns on debug mode                    |
 
 ## Running it
 
@@ -47,11 +47,11 @@ The bot is able to run either locally or in a [Docker](https://www.docker.com/) 
 
 ### In a Docker container
 
-The supplied ```Dockerfile``` and ```docker-compose.yml``` provides means for the bot to run in a Docker container (actually two containers, one for the server and one for the database instance).
+The supplied `Dockerfile` and `docker-compose.yml` provides means for the bot to run in a Docker container (actually two containers, one for the server and one for the database instance).
 
 Make sure you have Docker installed and running on your host.
 
-Make a copy of the environment variable configuration file ```config/web-variables-example.env``` and call it ```config/web-variables.env```. Replace the dummy variable values, save, and run ```docker-compose up```.
+Make a copy of the environment variable configuration file `config/web-variables-example.env` and call it `config/web-variables.env`. Replace the dummy variable values, save, and run `docker-compose up`.
 
     cp config/web-variables{-example,}.env
     vi config/web-variables.env
@@ -59,7 +59,7 @@ Make a copy of the environment variable configuration file ```config/web-variabl
 
 ### Locally
 
-Make sure you have a MongoDB database instance running on your host. Set the needed configuration environemnt variables and run ```npm start```. Example:
+Make sure you have a MongoDB database instance running on your host. Set the needed configuration environemnt variables and run `npm start`. Example:
 
     DEBUG=1 DB_HOST=localhost npm start
 
@@ -71,7 +71,7 @@ If you don't want to install MongoDB on your host, you can run it in a Docker co
 
 ### In debug mode
 
-Set the ```DEBUG``` environment variable to any value to turn on debug mode. Debug mode means that
+Set the `DEBUG` environment variable to any value to turn on debug mode. Debug mode means that
 
 * the bot doesn't actually tweet the articles.
 * the the database is still updated with bookeeping information.
@@ -79,12 +79,12 @@ Set the ```DEBUG``` environment variable to any value to turn on debug mode. Deb
 
 ## Testing it
 
-To run unit tests, install the devlopment dependencies and run ```npm test```.
+To run unit tests, install the devlopment dependencies and run `npm test`.
 
     npm install         # no --production flag this time
     npm test            # ctrl-C exits
 
-A test coverage report will be generated in ```coverage/lcov-report/index.html```.
+A test coverage report will be generated in `coverage/lcov-report/index.html`.
 
 ## License
 
