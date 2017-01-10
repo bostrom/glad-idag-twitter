@@ -50,6 +50,16 @@ describe("the OT parser", function () {
       return expect(otParser.getArticleList()).to.eventually.have.length(50);
     });
 
+    it("should reject if there's no articles in list", function () {
+      // if the markup changes and the parser can't find the list
+      nock.cleanAll();
+      nock('http://online.osterbottenstidning.fi')
+        .get(/Sida\/GladArg/)
+        .reply(200, "<html><body></body></html>");
+
+      return otParser.getArticleList().should.be.rejectedWith(Error, 'ERROR_NO_ARTICLES_IN_LIST');
+    });
+
     it("should return an array of only numbers as strings", function (done) {
       otParser.getArticleList().then(function (list) {
         list.should.all.match(/^\d+$/);
@@ -59,7 +69,7 @@ describe("the OT parser", function () {
 
     it("should return the article ids in the right order", function (done) {
       otParser.getArticleList().then(function (list) {
-        expect(list[0]).to.equal('107695');
+        expect(list[0]).to.equal('128515');
         done();
       });
     });
