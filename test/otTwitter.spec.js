@@ -94,9 +94,7 @@ describe("otTwitter", function () {
     });
 
     it("should return whatever the twitter client returns", function () {
-      return otTwitter.tweet(shortContent).should.eventually.become({
-        success: true
-      });
+      return otTwitter.tweet(shortContent).should.eventually.have.property('success', true);
     });
 
     describe("when content is longer than 140 characters", function () {
@@ -150,9 +148,7 @@ describe("otTwitter", function () {
       });
 
       it("should return a debug response with short messages", function () {
-        otTwitter.tweet(shortContent).should.eventually.become({
-          id_str: 'debug'
-        });
+        otTwitter.tweet(shortContent).should.eventually.have.property('id_str', 'debug');
       });
 
       it("should not call the twitter client with long messages", function () {
@@ -162,9 +158,7 @@ describe("otTwitter", function () {
       });
 
       it("should return a debug response with long messages", function () {
-        otTwitter.tweet(longContent).should.eventually.become({
-          id_str: 'debug'
-        });
+        otTwitter.tweet(longContent).should.eventually.have.property('id_str', 'debug');
       });
 
     });
