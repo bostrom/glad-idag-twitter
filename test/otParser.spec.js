@@ -69,7 +69,7 @@ describe("the OT parser", function () {
 
     it("should return the article ids in the right order", function (done) {
       otParser.getArticleList().then(function (list) {
-        expect(list[0]).to.equal('128515');
+        expect(list[0]).to.equal('145742');
         done();
       });
     });
@@ -97,7 +97,7 @@ describe("the OT parser", function () {
     describe("for arg idag articles", function () {
       it("should return the article content as property 'content'", function (done) {
         otParser.getArticle(67890).then(function (article) {
-          expect(article.content).to.equal('arg i dag är mamman till personen som var inblandad i singelolyckan i Esse på midsommardagen över den grova kommentaren som en cyklande förbipasserande fällde. ');
+          expect(article.content).to.equal('Arg i dag är är flera mammor och blivande mammor i Jeppo efter att ha fått veta att vår mödrarådgivning lägger ner denna vecka. Varför måste en välfungerande verksamhet läggas ner och varför centraliseras allt? Vi är verkligen besvikna och känner oss åsidosatta!');
           done();
         });
       });
@@ -113,7 +113,7 @@ describe("the OT parser", function () {
     describe("for glad idag articles", function () {
       it("should return the article content as property 'content'", function (done) {
         otParser.getArticle(12345).then(function (article) {
-          expect(article.content).to.equal('Glad i dag är en larsmo bo över den fina skötsel jag fick på jouren i dag och vilken nogrann undersökning dom gjorde , det är roligt att se att någon bryr sig för en så liten sak som lite feber och hosta i 5 dagar ett stort fång med rosor till hela jouren på malmska');
+          expect(article.content).to.equal('Glad i dag är eleverna i årskurs 1 och 2 vid Näs skola över det fina mottagandet vi fick vid Bjärgas, när vi var på vår utfärd.');
           done();
         });
       });
