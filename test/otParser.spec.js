@@ -69,7 +69,7 @@ describe("the OT parser", function () {
 
     it("should return the article ids in the right order", function (done) {
       otParser.getArticleList().then(function (list) {
-        expect(list[0]).to.equal('145742');
+        expect(list[0]).to.equal('150721');
         done();
       });
     });
@@ -97,7 +97,7 @@ describe("the OT parser", function () {
     describe("for arg idag articles", function () {
       it("should return the article content as property 'content'", function (done) {
         otParser.getArticle(67890).then(function (article) {
-          expect(article.content).to.equal('Arg i dag är är flera mammor och blivande mammor i Jeppo efter att ha fått veta att vår mödrarådgivning lägger ner denna vecka. Varför måste en välfungerande verksamhet läggas ner och varför centraliseras allt? Vi är verkligen besvikna och känner oss åsidosatta!');
+          expect(article.content).to.equal('Arg idag är en pappa i Baggholmen över hundskiten överallt, folk som kommer brännande med åtminstone 60 genom bostadsområdet fast barn står och leker på infarten, men mest över att någon slagit sönder roskisen vid Baggholmsparken så det låg brädor med spikar upp överallt och chips på marken som fullt med kråkor satt och åt. Allt detta på en promenad.');
           done();
         });
       });
@@ -113,7 +113,7 @@ describe("the OT parser", function () {
     describe("for glad idag articles", function () {
       it("should return the article content as property 'content'", function (done) {
         otParser.getArticle(12345).then(function (article) {
-          expect(article.content).to.equal('Glad i dag är eleverna i årskurs 1 och 2 vid Näs skola över det fina mottagandet vi fick vid Bjärgas, när vi var på vår utfärd.');
+          expect(article.content).to.equal('En Larsmobo är glad över Larsmos satsning på COOL. Bra och mångsidigt program. Man får vara stolt som Larsmobo.');
           done();
         });
       });

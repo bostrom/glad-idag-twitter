@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang=sv>
 <head>
@@ -13,6 +12,7 @@
     <link href="http://cdn1.hssmedia.fi/Content/Mobile/Favicons/OT/ot-72x72.png" rel="apple-touch-icon" sizes="72x72" />
     <link href="http://cdn1.hssmedia.fi/Content/Mobile/Favicons/OT/ot-114x114.png" rel="apple-touch-icon" sizes="114x114" />
     <link href="http://cdn1.hssmedia.fi/Content/Mobile/Favicons/OT/ot-144x144.png" rel="apple-touch-icon" sizes="144x144" />
+    <script src="/Scripts/HSSUtils.js"></script>
 
 
     <!-- Kärkimedia -->
@@ -25,35 +25,25 @@
 <!-- Jquery -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Jquery code for Navigation -->
-
 
 <!-- Notifications-->
-<script src="/Scripts/notifications.js?noCache=31.5.2017 21:25:11"></script>
+
 
 <!-- Bootstrap -->
 <link href="/Content/bootstrap.css" rel="stylesheet">
 <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
 
-
-<script src="/Scripts/jquerylogic.js?noCache=31.5.2017 21:25:11" type="text/javascript"></script>
+<script src="/Scripts/jquerylogic.js?noCache=17.7.2017 17:31:04" type="text/javascript"></script>
 
 <link href="/Content/layout.css" rel="stylesheet">
 <link href="/Content/siteadjust.css" rel="stylesheet">
 <link href="/Content/typography.css" rel="stylesheet">
 
-<!-- Slimbox -->
-
-
 <!--Font Awesome-->
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-<!--ResponsiveSlides-->
-
-
 <!--Google Fonts-->
-
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
 
 
@@ -106,6 +96,7 @@
             googletag.defineSlot('/3806216/OT_SektionsBanner2_666x170', [666, 170], 'div-gpt-ad-1484745165681-0').addService(googletag.pubads());
             googletag.defineSlot('/3806216/OT_SektionsBanner3_666x170', [666, 170], 'div-gpt-ad-1484745191529-0').addService(googletag.pubads());
             googletag.defineSlot('/3806216/OT_SektionsBanner4_666x170', [666, 170], 'div-gpt-ad-1485243756869-0').addService(googletag.pubads());
+            googletag.defineSlot('/3806216/OT_Vinkel_1260x230', [1260, 230], 'div-gpt-ad-1496659189273-0').addService(googletag.pubads());
 
             // Underparader och artikelvy
             googletag.defineSlot('/3806216/OT_Artikelvy_980x240', [980, 240], 'div-gpt-ad-1377867744849-0').addService(googletag.pubads());
@@ -119,28 +110,22 @@
             googletag.defineSlot('/3806216/OT_Lasvy_620x200', [620, 200], 'div-gpt-ad-1491464668527-0').addService(googletag.pubads());
 
             //Valbanners
-            googletag.defineSlot('/3806216/OT_Val1_230x120', [230, 120], 'div-gpt-ad-1489138505943-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val2_230x120', [230, 120], 'div-gpt-ad-1489138660975-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val3_230x120', [230, 120], 'div-gpt-ad-1489138724720-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val4_230x120', [230, 120], 'div-gpt-ad-1489138780675-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val5_230x120', [230, 120], 'div-gpt-ad-1489138842859-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val6_230x120', [230, 120], 'div-gpt-ad-1489138906316-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val7_230x120', [230, 120], 'div-gpt-ad-1489138958805-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val8_230x120', [230, 120], 'div-gpt-ad-1489139004392-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val9_230x120', [230, 120], 'div-gpt-ad-1489139055535-0').addService(googletag.pubads());
-            googletag.defineSlot('/3806216/OT_Val10_230x120', [230, 120], 'div-gpt-ad-1489139095862-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val1_230x120', [230, 120], 'div-gpt-ad-1489138505943-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val2_230x120', [230, 120], 'div-gpt-ad-1489138660975-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val3_230x120', [230, 120], 'div-gpt-ad-1489138724720-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val4_230x120', [230, 120], 'div-gpt-ad-1489138780675-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val5_230x120', [230, 120], 'div-gpt-ad-1489138842859-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val6_230x120', [230, 120], 'div-gpt-ad-1489138906316-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val7_230x120', [230, 120], 'div-gpt-ad-1489138958805-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val8_230x120', [230, 120], 'div-gpt-ad-1489139004392-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val9_230x120', [230, 120], 'div-gpt-ad-1489139055535-0').addService(googletag.pubads());
+            //googletag.defineSlot('/3806216/OT_Val10_230x120', [230, 120], 'div-gpt-ad-1489139095862-0').addService(googletag.pubads());
 
             googletag.pubads().enableSingleRequest();
             googletag.pubads().collapseEmptyDivs();
             googletag.enableServices();
         });
     </script>
-    <!--No more Google-->
-
-
-
-        <!--För att undvika dubbelklickande -->
-
 
 <!-- CHARTBEAT STATS -->
 <script type="text/javascript">var _sf_startpt = (new Date()).getTime()</script>
@@ -233,7 +218,7 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
 
 
                     <ul class="nav navbar-nav navbar-right">
-                            <li><a id="login" href="/Access/Login" class="online-mainmenu">Logga in</a></li>
+                            <li><a id="login" href="https://mitt.osterbottenstidning.fi/Loggain/?r=aHR0cDovL29ubGluZS5vc3RlcmJvdHRlbnN0aWRuaW5nLmZpL1NpZGEvR2xhZEFyZw==" class="online-mainmenu">Logga in</a></li>
                     </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -281,7 +266,6 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
                             <li><a href="/fotboll" class="online-submenu">Fotboll</a></li>
                             <li role="separator" class="divider"></li>
                             <li id="jaro"><a href="/tag/fotbollspodden" class="online-submenu">Fotbollspodden</a></li>
-                            <li><a href="http://livestream.osterbottenstidning.fi/" class="online-submenu">Jaro Livestream</a></li>
                             <li><a href="http://sportis.vasabladet.fi/" class="online-mainmenu">Sportissajten</a></li>
                         </ul>
                     </li>
@@ -297,8 +281,7 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
                             <li><a href="/utrikes" class="online-submenu">Utrikes</a></li>
                             <li><a href="/ekonomi" class="online-submenu">Ekonomi</a></li>
                             <li><a href="/Sida/Livsstil" class="online-submenu">Livsstil</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li id="torgkameran" class="online-submenu"><a href="/Artikel/Visa/91277">Torgkameran</a></li>
+
                         </ul>
                     </li>
 
@@ -330,55 +313,12 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
 <div id="wrapper" class="ot">
 
 
-<input type="hidden" id="mIdEnc" value="" />
-<input type="hidden" id="nID" value="" />
-<input type="hidden" id="nLink" value="" />
-
-
-    <div id="normalPrio" hidden class="alert alert-info">
-        <div class="clickableDiv">
-            <img class="ui-image" src="/Content/images/layoutbilder/notification.png" />
-            <p class="nHeadline"></p>
-            <p class="nBodytext"></p>
-            <p class="nLinkText"></p>
-            <img src="#" class="nImage" /><br />
-        </div>
-            <p class="dismiss">Stäng</p>
+    <!-- /3806216/OT_Vinkel_1260x230 -->
+    <div id='div-gpt-ad-1496659189273-0' style='height:230px; width:1260px;'>
+        <script>
+            googletag.cmd.push(function () { googletag.display('div-gpt-ad-1496659189273-0'); });
+        </script>
     </div>
-
-
-    <div id="highPrio">
-        <div class="modal fade" id="modal" role="dialog">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title nHeadline">RUBRIK</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <p class="nBodytext"></p>
-                            <span class="btn btn-info nLinkText modalclick"></span> <br />  <br />
-                            <img src="#" class="nImage" /> <br />
-
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default dismissmodal" data-dismiss="modal">Ignorera</button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-
-<link href="/Content/notification.css" rel="stylesheet" />
-
-
-
-
-
 
     <!-- OT_Paraden_1260x320 -->
     <div id='div-gpt-ad-1392291151193-0' class='topbanner' style='width:1260px; height:320px;'>
@@ -423,8 +363,210 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
 <div class="row">
 
     <div class="c647">
-            <a href="/Artikel/VisaArtikel/145742">
+            <a href="/Artikel/VisaArtikel/150721">
                 <article class="main">
+                    <h2>Arg i dag..</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">15 juli kl 12:20</time>
+                    </div>
+
+                    <p><b></b> .. är en pappa.</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/150706">
+                <article class="md">
+                    <h2>Arg idag..</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">15 juli kl 08:29</time>
+                    </div>
+
+                    <p><b></b> ..är flera husägare.</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/150610">
+                <article class="md">
+                    <h2>Arg i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">14 juli kl 12:12</time>
+                    </div>
+
+                    <p><b></b> är en affärskund.</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/150580">
+                <article class="md">
+                    <h2>Arg i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">14 juli kl 07:29</time>
+                    </div>
+
+                    <p><b></b> är en bilist</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/150036">
+                <article class="md">
+                    <h2>Arg i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">8 juli kl 18:16</time>
+                    </div>
+
+                    <p><b></b> <div class="adn ads">
+<div class="gs">
+<div id=":17l" class="ii gt adP adO">
+<div id=":13r" class="a3s aXjCH m15d22af61a63dc66">
+<p>är en person.</p>
+</div>
+<div class="yj6qo"> </div>
+</div>
+<div class="hi"> </div>
+</div>
+<div class="ajx"> </div>
+</div>
+<div class="gA gt acV"> </div></p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/150026">
+                <article class="md">
+                    <h2>Arg i dag ...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">8 juli kl 17:30</time>
+                    </div>
+
+                    <p><b></b> Är man</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/149277">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">2 juli kl 10:51</time>
+                    </div>
+
+                    <p><b>LARSMO</b> Är en Larsmobo...</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/148547">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">26 juni kl 20:09</time>
+                    </div>
+
+                    <p><b></b> ... är vi på Sexsjö.</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/148253">
+                <article class="md">
+                    <h2>Arg i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">22 juni kl 21:58</time>
+                    </div>
+
+                    <p><b></b> Är en pendlare</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/147750">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">19 juni kl 08:12</time>
+                    </div>
+
+                    <p><b></b> Är en familj</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/147747">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">19 juni kl 08:00</time>
+                    </div>
+
+                    <p><b></b> Är en kvinna</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/147541">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">16 juni kl 17:36</time>
+                    </div>
+
+                    <p><b></b> Är en föredetta Ytteressebo</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/147427">
+                <article class="md">
+                    <h2>Arg i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">15 juni kl 20:17</time>
+                    </div>
+
+                    <p><b></b> Är en man</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/147338">
+                <article class="md">
+                    <h2>Arg i dag</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">15 juni kl 11:18</time>
+                    </div>
+
+                    <p><b></b> är en djurvän</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/147019">
+                <article class="md">
+                    <h2>Arg idag</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">12 juni kl 20:16</time>
+                    </div>
+
+                    <p><b></b> är en pensionär...</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/146934">
+                <article class="md">
+                    <h2>Arg i dag</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">12 juni kl 07:52</time>
+                    </div>
+
+                    <p><b></b> är några djurvänner</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/146393">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">6 juni kl 18:11</time>
+                    </div>
+
+                    <p><b></b> är en Karlebybo</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/146194">
+                <article class="md">
+                    <h2>Arg idag</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">4 juni kl 22:56</time>
+                    </div>
+
+                    <p><b></b> är en Sandsundbo..</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/145988">
+                <article class="md">
+                    <h2>Glad i dag...</h2>
+                    <div class="widget publishedFront">
+                        <time datetime="2016-10-14T02:01Z" pubdate="">2 juni kl 18:17</time>
+                    </div>
+
+                    <p><b></b> Är personalen</p>
+                </article>
+            </a>
+            <a href="/Artikel/VisaArtikel/145742">
+                <article class="md">
                     <h2>Arg i dag...</h2>
                     <div class="widget publishedFront">
                         <time datetime="2016-10-14T02:01Z" pubdate="">31 maj kl 20:25</time>
@@ -736,196 +878,6 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
                     <p><b></b> är en person..</p>
                 </article>
             </a>
-            <a href="/Artikel/VisaArtikel/140114">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">11 april kl 21:38</time>
-                    </div>
-
-                    <p><b></b> är en mamma</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/139289">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">7 april kl 07:47</time>
-                    </div>
-
-                    <p><b></b> ... är en diabetiker.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/138899">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">4 april kl 11:26</time>
-                    </div>
-
-                    <p><b></b> ... är en läsare.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/138620">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">1 april kl 16:01</time>
-                    </div>
-
-                    <p><b></b> är ett par i Bosund.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/138619">
-                <article class="md">
-                    <h2>Arg i dag....</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">1 april kl 16:00</time>
-                    </div>
-
-                    <p><b></b> ... är en mamma från Jakobstad.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/137942">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">27 mars kl 17:55</time>
-                    </div>
-
-                    <p><b></b> Är en <span class="nanospell-typo">Larsmobo</span></p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/137123">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">21 mars kl 14:54</time>
-                    </div>
-
-                    <p><b></b> är en man</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136956">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">20 mars kl 12:36</time>
-                    </div>
-
-                    <p><b></b> är en bilist.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136803">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">18 mars kl 18:49</time>
-                    </div>
-
-                    <p><b></b> ... är boende längs Åvistvägen.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136754">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">17 mars kl 20:22</time>
-                    </div>
-
-                    <p><b></b> Är en förälder</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136607">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">16 mars kl 19:35</time>
-                    </div>
-
-                    <p><b></b> Är en person</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136606">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">16 mars kl 19:33</time>
-                    </div>
-
-                    <p><b></b> Är spårkalle</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136316">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">14 mars kl 15:53</time>
-                    </div>
-
-                    <p><b></b> Är en dam</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136314">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">14 mars kl 15:52</time>
-                    </div>
-
-                    <p><b></b> Är en Skutnäsbo</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136126">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">13 mars kl 09:53</time>
-                    </div>
-
-                    <p><b></b> ... är en bilist.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/136121">
-                <article class="md">
-                    <h2>Arg i dag</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">13 mars kl 08:50</time>
-                    </div>
-
-                    <p><b></b> är en person</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/135977">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">11 mars kl 17:34</time>
-                    </div>
-
-                    <p><b></b> ...är en soldyrkare.</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/135908">
-                <article class="md">
-                    <h2>Glad i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">10 mars kl 20:48</time>
-                    </div>
-
-                    <p><b></b> Är en pensionär</p>
-                </article>
-            </a>
-            <a href="/Artikel/VisaArtikel/135840">
-                <article class="md">
-                    <h2>Arg i dag...</h2>
-                    <div class="widget publishedFront">
-                        <time datetime="2016-10-14T02:01Z" pubdate="">10 mars kl 14:42</time>
-                    </div>
-
-                    <p><b></b> Är en person</p>
-                </article>
-            </a>
     </div>
 
     <div class="c313 last">
@@ -1027,6 +979,8 @@ j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; 
     </div>
 
 </div>
+
+
 
 </div><!-- wrapper -->
 
